@@ -1,0 +1,412 @@
+body, html {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+/* for the nav */
+
+.nav-items {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .nav-items a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+
+  }
+  
+  .nav-items {
+    display: flex;
+    justify-content: flex-end;
+    padding: 40px 80px ;
+    gap: 60px;
+  }
+  
+ 
+/* for the nav end */
+
+/* hero section starts */
+
+.hero-section{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 120px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    color: #212529;
+    font-weight: bold;
+}
+
+.hero-content .highlight {
+    color: #000; /* Make the name stand out */
+}
+
+.hero-content p {
+    font-size: 25px;
+    color: #666;
+    margin: 50px 0 25px;
+}
+
+/* Button */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ff6b6b;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #ff4757;
+}
+
+/* Hero Image */
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #e0e0e0;
+}
+
+/* hero section ends*/
+
+
+/* about section start */
+
+.about-me{
+
+    display: flex;
+    margin-top: 60px;
+}
+
+/* Wrapper to center everything */
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* Container for the slider */
+.slider-container {
+  display: flex;  /* Make elements appear in a row */
+  align-items: center; /* Center items vertically */
+  justify-content: center;
+  width: 800px;
+  height: 570px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+/* Styling images */
+.slider img {
+  width: 740px;
+  height: 518px;
+  object-fit: cover;
+  display: none; /* Hide all images initially */
+}
+
+/* Button styles */
+button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* about section ends */
+
+/* skills section start */
+.skills{
+    display: flex;
+    margin-top: 60px;
+
+}
+
+/* skills animation */
+
+.skills-body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c7d8f0b0 ;
+    height: 70vh;
+}
+
+.card-contents {
+    
+    height: 300px;
+    width: 900px;
+    top: 60px;
+    left: calc(50% - 300px);
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .card {
+    display: flex;
+    height: 400px;
+    width: 800px;
+    background-color: #5c6294;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+  /*   margin-left: -50px; */
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+  }
+  
+  .card:not(:first-child) {
+      margin-left: -50px;
+  }
+  
+  .card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+  }
+  
+  .card:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+  }
+  
+  .title {
+    color: white;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+  
+  .bar {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    height: 5px;
+    width: 150px;
+  }
+  
+  .emptybar {
+    background-color: #2c405eef;
+    width: 80%;
+    height: 100%;
+  }
+  
+  .filledbar {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    width: 0%;
+    height: 100%;
+    background: rgb(116, 179, 216);
+    transition: 0.6s ease-out;
+    background: linear-gradient(to right, rgb(37, 145, 188) 0%, rgb(243, 212, 146) 100%, rgba(255,186,60,1) 100%);
+    
+  }
+  
+  .card:hover .filledbar {
+    width: 120px;
+    transition: 0.4s ease-out;
+  }
+  
+  
+  
+  
+  .card:hover .stroke {
+    stroke-dashoffset: 100;
+    transition: 0.6s ease-out;
+  }
+
+/* skills section ends */
+
+/* featured contents starts */
+.features{
+  margin-top: 60px
+}
+
+/* the row column grip starts */
+
+.featured-works {
+  max-width: 800px;
+  margin: auto;
+}
+
+.featured-works h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.work-item {
+  display: grid;
+  
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.work-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.work-details h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.links-container {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  
+}
+
+.case-study-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;       /* Removes underline */
+  transition: background-color 0.3s ease;
+}
+
+.case-study-btn:hover {
+  background-color: #45a049;
+}
+
+/* Anchor Tag Styling */
+.view-project-link {
+  color: #1e88e5;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
+}
+
+.view-project-link:hover {
+  color: #0d47a1;
+}
+
+.category {
+  color: #8695a4;
+  font-weight: 600;
+}
+
+.work-details p {
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* featured contents ends */
+
+.IT-Solutions{
+  margin: 60px ;
+}
+
+/* styling for accordion start */
+
+/* Container styles */
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+
+/* Accordion item styling */
+.accordion-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  padding: 4px;
+  border: solid 1px #ccc;
+  background-color: #f4f4f4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ 
+}
+
+.accordion-item:hover {
+  background-color: #e2e2e2; /* Highlight on hover */
+}
+
+/* Hidden content styling */
+.accordion-content {
+  display: none;
+  width: 600px;
+  padding: 4px;
+  border: solid 1px #ccc;
+  background-color: #fafafa;
+  margin-top: -1px;
+}
+
+/* Content text styling */
+.accordion-content p {
+  padding: 0 10px;
+}
+
+
+/* styling for accordion end */
+
+/* footer section start */
+
+.footer-section{
+
+    background-color: #c7d8f0b0 ;
+    height: 50vh;
+}
+
+.footer-contents{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 100px;
+
+}
+
+/* footer section ends */
+
