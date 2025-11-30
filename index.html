@@ -388,7 +388,9 @@
       .about-text p {
         margin-bottom: 1.5rem;
       }
-
+      .download-btn {
+        display: inline-block;
+      }
       .about-stats {
         display: flex;
         gap: 30px;
@@ -1102,6 +1104,12 @@
           padding: 20px;
         }
 
+        .download-btn {
+          display: block;
+          width: fit-content;
+          margin: 0 auto;
+        }
+
         .contact-item {
           padding: 15px;
           flex-direction: column;
@@ -1289,7 +1297,7 @@
             <a
               href="https://drive.google.com/drive/folders/1GNxdi_2MvfqYiWN88izuvWNujBcSW_Le"
               target="_blank"
-              class="btn primary-btn"
+              class="btn primary-btn download-btn"
               >Download Resume</a
             >
           </div>
@@ -1493,7 +1501,7 @@
               </div>
             </div>
             <div class="project-content">
-              <h3>Masoutfits.com</h3>
+              <h3>Masoutfits</h3>
               <p>
                 A full-featured e-commerce platform built with Next.js and
                 Material-UI.
