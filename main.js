@@ -1,77 +1,182 @@
-// Function to toggle accordion item visibility
-function toggleItem(id) {
-    // Get the specific accordion item that was clicked
-    const item = document.getElementById(id);
-    
-    // Get all elements with the class 'accordion-content' (all accordion items)
-    const allItems = document.querySelectorAll('.accordion-content');
+// main.js
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+  const navItems = document.querySelector(".nav-items");
 
-    // Loop through all accordion content items
-    allItems.forEach((element) => {
-        // If the current element in the loop is NOT the clicked item, hide it
-        if (element !== item) {
-            element.style.display = 'none';
-        }
+  mobileMenuBtn.addEventListener("click", () => {
+    navItems.classList.toggle("active");
+    mobileMenuBtn.innerHTML = navItems.classList.contains("active")
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
+  });
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      navItems.classList.remove("active");
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // Active navigation link based on scroll position
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function updateActiveNavLink() {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (scrollY >= sectionTop - 100) {
+        current = section.getAttribute("id");
+      }
     });
 
-    // Toggle the clicked item:
-    // If the clicked item's display is 'none' or an empty string (meaning it's currently hidden),
-    // then show it by setting display to 'block'.
-    // Otherwise, hide it by setting display to 'none'.
-    if (item.style.display === 'none' || item.style.display === '') {
-        item.style.display = 'block'; // Show the clicked item
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNavLink);
+
+  // About Section Image Slider
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  let currentSlide = 0;
+
+  function showSlide(n) {
+    slides.forEach((slide) => slide.classList.remove("active"));
+    dots.forEach((dot) => dot.classList.remove("active"));
+
+    currentSlide = (n + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showSlide(index);
+    });
+  });
+
+  // Auto slide every 5 seconds
+  setInterval(nextSlide, 5000);
+
+  // Animate skill bars when they come into view
+  const skillBars = document.querySelectorAll(".skill-progress");
+
+  function animateSkillBars() {
+    skillBars.forEach((bar) => {
+      const barPosition = bar.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.3;
+
+      if (barPosition < screenPosition) {
+        const level = bar.getAttribute("data-level");
+        bar.style.width = `${level}%`;
+      }
+    });
+  }
+
+  // Initial check and then on scroll
+  animateSkillBars();
+  window.addEventListener("scroll", animateSkillBars);
+
+  // Form submission
+  const contactForm = document.querySelector(".contact-form");
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get form data
+    const formData = new FormData(contactForm);
+    const name = formData.get("name");
+    const email = formData.get("email");
+
+    // In a real application, you would send this data to a server
+    // For now, we'll just show a success message
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      submitBtn.textContent = "Message Sent!";
+      submitBtn.style.backgroundColor = "#2D5A27";
+
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        submitBtn.style.backgroundColor = "";
+        contactForm.reset();
+      }, 2000);
+    }, 1500);
+  });
+
+  // Navbar background on scroll
+  const navContainer = document.querySelector(".nav-container");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navContainer.style.backgroundColor = "rgba(255, 255, 255, 0.98)";
+      navContainer.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.1)";
     } else {
-        item.style.display = 'none'; // Hide the clicked item
+      navContainer.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
+      navContainer.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
     }
-}
+  });
 
+  // Floating elements animation
+  const floatingElements = document.querySelectorAll(".floating-element");
 
-//slider action starts here
+  floatingElements.forEach((element, index) => {
+    // Add random delay to each element
+    element.style.animationDelay = `${index * 2}s`;
+  });
 
+  // Initialize AOS (Animate On Scroll) - if you decide to add it
+  // This is a placeholder for if you want to add more animations
+  function initAnimations() {
+    // You can add more animation triggers here
+  }
 
-// Select all images and buttons
-var sliderImages = document.querySelectorAll(".slide");
-var arrowLeft = document.getElementById("arrow-left");
-var arrowRight = document.getElementById("arrow-right");
-var current = 0; // Track the current image index
-
-// Function to hide all images
-function hideAllImages() {
-    for (var i = 0; i < sliderImages.length; i++) {
-        sliderImages[i].style.display = "none";
-    }
-}
-
-// Function to show the current image
-function showImage(index) {
-    hideAllImages();
-    sliderImages[index].style.display = "block";
-}
-
-// Function to show the previous image
-function showPrevious() {
-    current--; // Move to the previous image
-    if (current < 0) {
-        current = sliderImages.length - 1; // Loop back to the last image
-    }
-    showImage(current);
-}
-
-// Function to show the next image
-function showNext() {
-    current++; // Move to the next image
-    if (current >= sliderImages.length) {
-        current = 0; // Loop back to the first image
-    }
-    showImage(current);
-}
-
-// Add event listeners for the buttons
-arrowLeft.addEventListener("click", showPrevious);
-arrowRight.addEventListener("click", showNext);
-
-// Start by showing the first image
-showImage(current);
-
-
-//slider action ends here
+  initAnimations();
+});
