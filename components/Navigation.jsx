@@ -1,0 +1,106 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
+
+export default function Navigation() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = ["home", "about", "skills", "experience", "projects", "contact"];
+      const scrollPos = window.scrollY + 120;
+
+      for (let i = sections.length - 1; i >= 0; i -= 1) {
+        const id = sections[i];
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPos) {
+          setActive(id);
+          break;
+        }
+      }
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleNavClick = () => setMenuOpen(false);
+
+  return (
+    <nav
+      className={`fixed inset-x-0 top-0 z-[1000] transition-all duration-500 ${
+        scrolled
+          ? "bg-palette-bg/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
+          : "bg-transparent backdrop-blur-none"
+      }`}
+    >
+      <div className="mx-auto flex w-[90%] max-w-[1720px] items-center justify-between py-5">
+        {/* Logo - Clean glass effect without border */}
+        <a
+          href="#home"
+          onClick={handleNavClick}
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 backdrop-blur-sm text-sm font-bold text-palette-neon transition-all duration-300 hover:bg-palette-neon/20 hover:text-palette-purple hover:shadow-[0_0_15px_rgba(0,255,136,0.3)]"
+        >
+          MS
+        </a>
+
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          className="relative z-[1001] flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 backdrop-blur-sm text-white/90 transition-all hover:bg-white/10 md:hidden"
+          aria-expanded={menuOpen}
+          aria-label="Toggle menu"
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"} text-xl`} />
+        </button>
+
+        {/* Navigation Links - Glass Panel */}
+        <div
+          className={`fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-palette-bg/60 backdrop-blur-2xl transition-all duration-300 md:static md:inset-auto md:z-auto md:flex md:flex-row md:gap-8 md:bg-transparent md:backdrop-blur-none ${
+            menuOpen ? "flex" : "hidden md:flex"
+          }`}
+        >
+          {navLinks.map(({ href, label }) => {
+            const id = href.replace("#", "");
+            const isActive = active === id;
+            return (
+              <a
+                key={href}
+                href={href}
+                onClick={handleNavClick}
+                className={`
+                  relative px-3 py-2 text-base font-medium transition-all duration-300
+                  ${
+                    isActive
+                      ? "text-palette-neon"
+                      : "text-white/70 hover:text-white"
+                  }
+                  before:absolute before:bottom-0 before:left-1/2 before:h-[2px] before:w-0 before:-translate-x-1/2 before:bg-gradient-to-r before:from-palette-neon before:to-palette-purple before:transition-all before:duration-300
+                  hover:before:w-full
+                  ${isActive ? "before:w-full" : ""}
+                `}
+              >
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </nav>
+  );
+}
