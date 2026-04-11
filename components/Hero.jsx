@@ -52,7 +52,9 @@ export default function Hero() {
               <i className="fab fa-github" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/mahmud-sakib-3096b82b6/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-palette-surface/80 text-[var(--text-secondary)] shadow-md transition hover:border-palette-purple hover:text-palette-purple hover:shadow-glow-purple"
               aria-label="LinkedIn"
             >

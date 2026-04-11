@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import ParticleTrail from "@/components/ParticleTrail";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} min-h-screen antialiased`}>
+        <ParticleTrail />
         <div className="relative z-[1] min-h-screen">{children}</div>
       </body>
     </html>

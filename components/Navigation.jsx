@@ -16,19 +16,26 @@ export default function Navigation() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
+  // Fixed navbar height (adjust to your actual navbar height)
+  const NAVBAR_HEIGHT = 80;
+
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
 
       const sections = ["home", "about", "skills", "experience", "projects", "contact"];
-      const scrollPos = window.scrollY + 120;
+      // Adjust scroll position to account for navbar
+      const scrollPos = window.scrollY + NAVBAR_HEIGHT + 20;
 
       for (let i = sections.length - 1; i >= 0; i -= 1) {
         const id = sections[i];
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollPos) {
-          setActive(id);
-          break;
+        if (el) {
+          const offsetTop = el.getBoundingClientRect().top + window.scrollY;
+          if (offsetTop <= scrollPos) {
+            setActive(id);
+            break;
+          }
         }
       }
     };
@@ -38,7 +45,23 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = () => setMenuOpen(false);
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - NAVBAR_HEIGHT;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
     <nav
@@ -49,10 +72,10 @@ export default function Navigation() {
       }`}
     >
       <div className="mx-auto flex w-[90%] max-w-[1720px] items-center justify-between py-5">
-        {/* Logo - Clean glass effect without border */}
+        {/* Logo */}
         <a
           href="#home"
-          onClick={handleNavClick}
+          onClick={(e) => handleNavClick(e, "#home")}
           className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 backdrop-blur-sm text-sm font-bold text-palette-neon transition-all duration-300 hover:bg-palette-neon/20 hover:text-palette-purple hover:shadow-[0_0_15px_rgba(0,255,136,0.3)]"
         >
           MS
@@ -69,7 +92,7 @@ export default function Navigation() {
           <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"} text-xl`} />
         </button>
 
-        {/* Navigation Links - Glass Panel */}
+        {/* Navigation Links */}
         <div
           className={`fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-palette-bg/60 backdrop-blur-2xl transition-all duration-300 md:static md:inset-auto md:z-auto md:flex md:flex-row md:gap-8 md:bg-transparent md:backdrop-blur-none ${
             menuOpen ? "flex" : "hidden md:flex"
@@ -82,9 +105,9 @@ export default function Navigation() {
               <a
                 key={href}
                 href={href}
-                onClick={handleNavClick}
+                onClick={(e) => handleNavClick(e, href)}
                 className={`
-                  relative px-3 py-2 text-base font-medium transition-all duration-300
+                  relative px-3 py-2 text-base font-medium transition-all duration-300 cursor-pointer
                   ${
                     isActive
                       ? "text-palette-neon"

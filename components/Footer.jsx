@@ -19,8 +19,12 @@ const techStacks = [
 ];
 
 const socials = [
-  { href: "https://github.com/Mahmud-Sakib", icon: "fa-github", label: "GitHub" },
-  { href: "#", icon: "fa-linkedin-in", label: "LinkedIn" },
+  { href: "https://github.com/Mahmud-Saki6", icon: "fa-github", label: "GitHub" },
+  {
+    href: "https://www.linkedin.com/in/mahmud-sakib-3096b82b6/",
+    icon: "fa-linkedin-in",
+    label: "LinkedIn",
+  },
   { href: "#", icon: "fa-twitter", label: "Twitter" },
   { href: "#", icon: "fa-facebook-f", label: "Facebook" },
 ];

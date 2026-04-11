@@ -67,7 +67,7 @@ export default function About() {
                 <div className="stat-label">Years Exp</div>
               </div>
               <div className="stat-card">
-                <div className="stat-number">5+</div>
+                <div className="stat-number">6+</div>
                 <div className="stat-label">Technologies</div>
               </div>
             </div>

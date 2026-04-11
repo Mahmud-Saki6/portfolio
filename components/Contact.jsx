@@ -13,14 +13,14 @@ const items = [
   {
     iconClass: "fas fa-phone",
     title: "Phone",
-    content: "01534844704",
+    content: "+880 1534-844704 | WhatsApp",
     href: "tel:01534844704",
     external: false,
   },
   {
     iconClass: "fas fa-map-marker-alt",
     title: "Location",
-    content: "Dhaka, 1206, Bangladesh",
+    content: "Dhaka, Bangladesh (Remote | On-site | Hybrid)",
     href: null,
     external: false,
   },
@@ -29,6 +29,13 @@ const items = [
     title: "GitHub",
     content: "github.com/Mahmud-Saki6",
     href: "https://github.com/Mahmud-Saki6",
+    external: true,
+  },
+  {
+    iconClass: "fab fa-linkedin-in",
+    title: "LinkedIn",
+    content: "linkedin.com/in/mahmud-sakib-3096b82b6",
+    href: "https://www.linkedin.com/in/mahmud-sakib-3096b82b6/",
     external: true,
   },
 ];
