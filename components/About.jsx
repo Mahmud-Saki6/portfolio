@@ -35,29 +35,29 @@ export default function About() {
   return (
     <section
       id="about"
-      className="flex min-h-screen items-center border-t border-white/5 bg-palette-surface/50 py-16 sm:py-20 lg:py-24"
+      className="flex min-h-0 items-center border-t border-white/5 bg-palette-surface/50 py-12 sm:py-14 lg:py-16"
     >
-      <div className="mx-auto w-[90%] max-w-[1720px]">
+      <div className="mx-auto w-[92%] max-w-6xl">
         <h2 className="section-title-gradient">
           About Me
           <span className="section-title-underline" aria-hidden="true" />
         </h2>
 
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div className="order-2 space-y-5 text-[var(--text-secondary)] lg:order-1">
-            <p className="leading-relaxed">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="order-2 max-w-prose space-y-4 text-[15px] leading-[1.65] text-[var(--text-secondary)] text-justify lg:order-1 lg:max-w-none">
+            <p>
               I&apos;m a passionate frontend developer with a strong foundation
               in computer science and engineering. I specialize in creating
               responsive, user-friendly web applications using modern
               technologies like React, Next.js, and Tailwind CSS.
             </p>
-            <p className="leading-relaxed">
+            <p>
               I&apos;m dedicated to delivering high-quality, user-focused
               results and continuously expanding my skill set to stay current
               with the latest web development trends and best practices.
             </p>
 
-            <div className="flex flex-col gap-4 py-6 sm:flex-row sm:justify-center sm:gap-6 lg:justify-start">
+            <div className="flex flex-col gap-3 py-4 sm:flex-row sm:justify-center sm:gap-4 lg:justify-start">
               <div className="stat-card">
                 <div className="stat-number">10+</div>
                 <div className="stat-label">Projects</div>
@@ -84,7 +84,7 @@ export default function About() {
 
           <div className="order-1 lg:order-2">
             <div className="overflow-hidden rounded-xl border border-palette-purple/30 bg-[var(--bg-card)] shadow-xl shadow-black/40 ring-1 ring-palette-cyan/15 backdrop-blur-xl">
-              <div className="relative h-[280px] overflow-hidden sm:h-[350px] md:h-[400px]">
+              <div className="relative h-[220px] overflow-hidden sm:h-[260px] md:h-[300px]">
                 {slides.map((slide, i) => (
                   <div
                     key={slide.alt}

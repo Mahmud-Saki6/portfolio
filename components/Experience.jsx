@@ -27,9 +27,9 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="border-t border-white/5 bg-palette-surface/30 py-16 sm:py-20 lg:py-24"
+      className="border-t border-white/5 bg-palette-surface/30 py-12 sm:py-14 lg:py-16"
     >
-      <div className="mx-auto w-[90%] max-w-[1720px]">
+      <div className="mx-auto w-[92%] max-w-6xl">
         <h2 className="section-title-gradient">
           Experience
           <span className="section-title-underline" aria-hidden="true" />
@@ -46,7 +46,7 @@ export default function Experience() {
             aria-hidden
           />
 
-          <ul className="relative space-y-12">
+          <ul className="relative space-y-8">
             {items.map((item, index) => (
               <li
                 key={item.date}
@@ -62,15 +62,15 @@ export default function Experience() {
                   }`}
                 />
                 <div className="experience-card">
-                  <span className="mb-3 inline-block rounded-full border border-palette-neon/30 bg-palette-neon/10 px-4 py-1 text-sm font-semibold text-palette-neon shadow-glow-neon">
+                  <span className="mb-2 inline-block rounded-full border border-palette-neon/30 bg-palette-neon/10 px-2.5 py-0.5 text-xs font-medium text-palette-neon shadow-glow-neon">
                     {item.date}
                   </span>
-                  <h3 className="text-xl font-bold text-[var(--text-primary)]">{item.title}</h3>
-                  <h4 className="mb-3 text-base font-medium text-[var(--text-secondary)]">
+                  <h3 className="text-base font-semibold text-[var(--text-primary)]">{item.title}</h3>
+                  <h4 className="mb-2 text-sm font-medium text-[var(--text-secondary)]">
                     {item.company}
                   </h4>
-                  <p className="mb-4 text-[var(--text-secondary)]">{item.body}</p>
-                  <ul className="ml-4 list-disc space-y-2 text-[var(--text-secondary)]">
+                  <p className="mb-3 text-sm leading-relaxed text-[var(--text-secondary)] text-justify">{item.body}</p>
+                  <ul className="ml-3 list-disc space-y-1.5 text-sm text-[var(--text-secondary)]">
                     {item.bullets.map((b) => (
                       <li key={b}>{b}</li>
                     ))}

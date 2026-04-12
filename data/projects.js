@@ -37,10 +37,52 @@ export const webProjects = [
     id: "bakkah",
     title: "Bakkah Holdings",
     description: "A corporate site built with React and Tailwind CSS.",
-    image: "/images/Section.png",
+    image: "/images/holdingHero.png",
     imageAlt: "Bakkah Holdings",
     liveUrl: "https://bakkahholdings.com/",
     tech: ["React", "Tailwind CSS", "Corporate"],
+  },
+];
+
+// ========== APPLICATIONS (full-stack / tools) ==========
+export const applicationProjects = [
+  {
+    id: "task-management-system",
+    title: "Task Management System",
+    description:
+      "A full-stack task management app for organizing and tracking projects.",
+    image: "/images/applications/task-management-system.png",
+    imageAlt: "TaskFlow task management app — login and features",
+    liveUrl: "https://task-management-system-kappa-six.vercel.app/",
+    tech: ["NestJS", "Next.js", "PostgreSQL", "MUI", "Docker"],
+  },
+  {
+    id: "crefix-ai",
+    title: "Crefix AI (Figma Clone)",
+    description:
+      "A design tool inspired by Figma, powered by AI for smart design generation.",
+    image: "/images/applications/crefix-ai.png",
+    imageAlt: "Crefix AI design tool dashboard",
+    liveUrl: "https://crefix-ai.vercel.app/",
+    tech: ["React", "Next.js 14", "MUI", "Gemini 3.0 API"],
+  },
+  {
+    id: "agriculture-chatbot",
+    title: "Agriculture Chatbot",
+    description:
+      "An AI-powered chatbot for agricultural assistance and crop guidance.",
+    image: "/images/applications/agriculture-chatbot.png",
+    imageAlt: "AgroBot AI agriculture assistant landing page",
+    liveUrl: "https://agriculture-chatbot-kappa.vercel.app/",
+    tech: [
+      "Python",
+      "Rasa 3.6.21",
+      "TensorFlow 2.12.0",
+      "React 18",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide React",
+    ],
   },
 ];
 
@@ -51,7 +93,7 @@ export const uiuxProjects = [
     title: "Uuro | Website",
     description:
       "Full website UI/UX design for Uuro — covering layout, typography, color system, and interactive component states.",
-    image: "/images/uuro-figma.png",
+    image: "/images/uurodesign.png",
     imageAlt: "Uuro website Figma design",
     figmaUrl: "https://www.figma.com/design/H2YagWQeZR6X67FTmEs1Tf/Uuro%7C-website",
     tech: ["UI/UX Design", "Figma", "Website Design", "Prototyping"],
@@ -61,7 +103,7 @@ export const uiuxProjects = [
     title: "Sajida Hospital | Website",
     description:
       "End-to-end UI/UX design for Sajida Hospital's web presence — information architecture, component library, and high-fidelity screens.",
-    image: "/images/sajida-figma.png",
+    image: "/images/sajidadesign.png",
     imageAlt: "Sajida Hospital Figma design",
     figmaUrl: "https://www.figma.com/design/3WpiT5Yb0LUIJIpaCrquxc/Sajida-Hospital-%7C-Website",
     tech: ["UI/UX Design", "Healthcare", "Figma", "Wireframing"],

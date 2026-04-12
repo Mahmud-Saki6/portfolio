@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const navLinks = [
@@ -17,7 +18,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
 
   // Fixed navbar height (adjust to your actual navbar height)
-  const NAVBAR_HEIGHT = 80;
+  const NAVBAR_HEIGHT = 64;
 
   useEffect(() => {
     const onScroll = () => {
@@ -71,14 +72,23 @@ export default function Navigation() {
           : "bg-transparent backdrop-blur-none"
       }`}
     >
-      <div className="mx-auto flex w-[90%] max-w-[1720px] items-center justify-between py-5">
+      <div className="mx-auto flex w-[92%] max-w-6xl items-center justify-between py-3">
         {/* Logo */}
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "#home")}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 backdrop-blur-sm text-sm font-bold text-palette-neon transition-all duration-300 hover:bg-palette-neon/20 hover:text-palette-purple hover:shadow-[0_0_15px_rgba(0,255,136,0.3)]"
+          className="relative shrink-0 transition-opacity duration-300 hover:opacity-90"
+          aria-label="Mahmud Sakib — Home"
         >
-          MS
+          <Image
+            src="/images/portfolio-logo.png"
+            alt=""
+            width={168}
+            height={56}
+            className="h-8 w-auto max-h-8 object-contain md:h-9 md:max-h-9"
+            priority
+            sizes="(max-width: 768px) 140px, 168px"
+          />
         </a>
 
         {/* Mobile Menu Button */}
@@ -94,7 +104,7 @@ export default function Navigation() {
 
         {/* Navigation Links */}
         <div
-          className={`fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-palette-bg/60 backdrop-blur-2xl transition-all duration-300 md:static md:inset-auto md:z-auto md:flex md:flex-row md:gap-8 md:bg-transparent md:backdrop-blur-none ${
+          className={`fixed inset-0 z-[999] flex flex-col items-center justify-center gap-6 bg-palette-bg/60 backdrop-blur-2xl transition-all duration-300 md:static md:inset-auto md:z-auto md:flex md:flex-row md:gap-5 md:bg-transparent md:backdrop-blur-none ${
             menuOpen ? "flex" : "hidden md:flex"
           }`}
         >
@@ -107,7 +117,7 @@ export default function Navigation() {
                 href={href}
                 onClick={(e) => handleNavClick(e, href)}
                 className={`
-                  relative px-3 py-2 text-base font-medium transition-all duration-300 cursor-pointer
+                  relative px-2 py-1.5 text-sm font-medium transition-all duration-300 cursor-pointer
                   ${
                     isActive
                       ? "text-palette-neon"

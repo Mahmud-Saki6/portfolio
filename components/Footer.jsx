@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const quickLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
@@ -73,10 +75,10 @@ export default function Footer() {
       <div
         style={{
           position: "relative",
-          width: "90%",
-          maxWidth: "1480px",
+          width: "92%",
+          maxWidth: "1152px",
           margin: "0 auto",
-          padding: "56px 0 0",
+          padding: "40px 0 0",
         }}
       >
         {/* ── 4 Column Grid ── */}
@@ -84,8 +86,8 @@ export default function Footer() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "32px",
-            marginBottom: "48px",
+            gap: "24px",
+            marginBottom: "32px",
           }}
         >
           {/* COLUMN 1: Brand */}
@@ -93,29 +95,26 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
               <div
                 style={{
-                  width: 55,
-                  height: 55,
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg,rgba(0,255,170,0.15),rgba(168,85,247,0.15))",
-                  border: "1.5px solid rgba(0,255,170,0.35)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: 16,
-                  fontWeight: 700,
-                  color: "#00ffaa",
-                  boxShadow: "0 0 18px rgba(0,255,170,0.2)",
                 }}
               >
-                MS
+                <Image
+                  src="/images/portfolio-logo.png"
+                  alt="Mahmud Sakib portfolio logo"
+                  width={152}
+                  height={50}
+                  style={{ width: "auto", height: 36, objectFit: "contain" }}
+                />
               </div>
               <div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: "#f1f5f9" }}>Mahmud Sakib</div>
+                <div style={{ fontSize: 15, fontWeight: 600, color: "#f1f5f9" }}>Mahmud Sakib</div>
                 <div style={{ fontSize: 12, color: "#64748b", letterSpacing: "0.04em" }}>Software Developer</div>
               </div>
             </div>
 
-            <p style={{ fontSize: 12, color: "#94a3b8", lineHeight: 1.6, margin: "0 0 16px", textAlign: "center" }}>
+            <p style={{ fontSize: 12, color: "#94a3b8", lineHeight: 1.55, margin: "0 0 12px", textAlign: "center" }}>
               A motivated CSE graduate building full-stack SaaS products with UI/UX focus.
             </p>
 
@@ -156,13 +155,13 @@ export default function Footer() {
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 color: "#a855f7",
-                marginBottom: 20,
+                marginBottom: 14,
                 textAlign: "center",
               }}
             >
               Quick Links
             </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -200,13 +199,13 @@ export default function Footer() {
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 color: "#22d3ee",
-                marginBottom: 20,
+                marginBottom: 14,
                 textAlign: "center",
               }}
             >
               Tech Stack
             </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
               {techStacks.map((stack) => (
                 <li key={stack.name}>
                   <span
@@ -246,28 +245,28 @@ export default function Footer() {
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 color: "#00ffaa",
-                marginBottom: 20,
+                marginBottom: 14,
                 textAlign: "center",
               }}
             >
               Location
             </h3>
             
-            <div style={{ textAlign: "center", marginBottom: 24 }}>
+            <div style={{ textAlign: "center", marginBottom: 18 }}>
               <div
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: 50,
-                  height: 50,
+                  width: 40,
+                  height: 40,
                   borderRadius: "50%",
                   background: "rgba(0,255,170,0.1)",
                   border: "1px solid rgba(0,255,170,0.3)",
-                  marginBottom: 12,
+                  marginBottom: 10,
                 }}
               >
-                <i className="fas fa-map-marker-alt" style={{ fontSize: 22, color: "#00ffaa" }} />
+                <i className="fas fa-map-marker-alt" style={{ fontSize: 16, color: "#00ffaa" }} />
               </div>
               <p style={{ fontSize: 13, color: "#94a3b8", margin: 0 }}>
                 Dhaka, Bangladesh
@@ -292,7 +291,7 @@ export default function Footer() {
               Connect
             </h3>
 
-            <div style={{ display: "flex", justifyContent: "center", gap: 12 }}>
+            <div style={{ display: "flex", justifyContent: "center", gap: 10 }}>
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -301,8 +300,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={s.label}
                   style={{
-                    width: 38,
-                    height: 38,
+                    width: 32,
+                    height: 32,
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
@@ -310,7 +309,7 @@ export default function Footer() {
                     background: "rgba(168,85,247,0.1)",
                     border: "1px solid rgba(168,85,247,0.25)",
                     color: "#94a3b8",
-                    fontSize: 15,
+                    fontSize: 13,
                     textDecoration: "none",
                     transition: "all 0.25s",
                   }}
@@ -340,7 +339,7 @@ export default function Footer() {
         <div
           style={{
             borderTop: "1px solid rgba(255,255,255,0.06)",
-            padding: "20px 0 28px",
+            padding: "16px 0 22px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",

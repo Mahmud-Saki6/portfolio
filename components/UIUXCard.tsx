@@ -27,7 +27,7 @@ export default function UIUXCard({
 
   return (
     <article className="glass-project-card group">
-      <div className="relative h-[220px] overflow-hidden sm:h-[250px]">
+      <div className="relative h-[200px] overflow-hidden sm:h-[220px]">
         <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-purple-400/40 bg-purple-500/20 px-2.5 py-1.5 shadow-lg backdrop-blur-md">
           <svg
             width="10"
@@ -69,7 +69,7 @@ export default function UIUXCard({
             alt={imageAlt || title}
             fill
             className="object-cover transition duration-500 group-hover:scale-110"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 34vw, 25vw"
           />
         ) : (
           <Image
@@ -79,7 +79,7 @@ export default function UIUXCard({
             className={`object-cover transition duration-500 group-hover:scale-110 ${
               isSvg ? "object-contain bg-palette-bg/90 p-6" : ""
             }`}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 34vw, 25vw"
             unoptimized={isSvg}
           />
         )}
@@ -90,13 +90,13 @@ export default function UIUXCard({
               href={figmaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-purple-500/50 bg-palette-surface/95 text-purple-400 shadow-glow-purple transition hover:border-palette-neon hover:bg-palette-neon/25 hover:text-white hover:shadow-glow-neon"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-purple-500/50 bg-palette-surface/95 text-sm text-purple-400 shadow-glow-purple transition hover:border-palette-neon hover:bg-palette-neon/25 hover:text-white hover:shadow-glow-neon"
               aria-label={`Open ${title} in Figma`}
             >
               <i className="fas fa-external-link-alt" />
             </a>
             <span
-              className="flex h-12 w-12 cursor-default items-center justify-center rounded-full border border-white/10 bg-palette-surface/95 text-palette-cyan shadow-md"
+              className="flex h-9 w-9 cursor-default items-center justify-center rounded-full border border-white/10 bg-palette-surface/95 text-sm text-palette-cyan shadow-md"
               title="Project details"
               aria-hidden
             >
@@ -106,12 +106,12 @@ export default function UIUXCard({
         </div>
       </div>
 
-      <div className="border-t border-white/5 p-6">
-        <h3 className="project-title-gradient mb-2 text-lg">{title}</h3>
-        <p className="mb-4 text-sm leading-relaxed text-[var(--text-secondary)]">
+      <div className="border-t border-white/5 p-4">
+        <h3 className="project-title-gradient mb-1.5">{title}</h3>
+        <p className="mb-3 text-xs leading-relaxed text-[var(--text-secondary)]">
           {description}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {tech.map((tag) => (
             <span key={tag} className="tech-chip">
               {tag}

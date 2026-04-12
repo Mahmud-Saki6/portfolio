@@ -12,6 +12,10 @@ export const metadata = {
   title: "Mahmud Sakib | Portfolio",
   description:
     "Frontend developer portfolio — React, Next.js, and modern web development.",
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
