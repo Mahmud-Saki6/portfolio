@@ -101,11 +101,11 @@ export default function Footer() {
                 }}
               >
                 <Image
-                  src="/images/portfolio-logo.png"
+                  src="/images/logo.png"  // Changed from portfolio-logo.png
                   alt="Mahmud Sakib portfolio logo"
-                  width={152}
-                  height={50}
-                  style={{ width: "auto", height: 36, objectFit: "contain" }}
+                  width={168}
+                  height={56}
+                  style={{ width: "auto", height: 50, objectFit: "contain" }}
                 />
               </div>
               <div>
@@ -251,7 +251,7 @@ export default function Footer() {
             >
               Location
             </h3>
-            
+
             <div style={{ textAlign: "center", marginBottom: 18 }}>
               <div
                 style={{

@@ -12,10 +12,6 @@ export const metadata = {
   title: "Mahmud Sakib | Portfolio",
   description:
     "Frontend developer portfolio — React, Next.js, and modern web development.",
-  icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
-  },
 };
 
 export default function RootLayout({ children }) {
@@ -26,6 +22,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
+        {/* Favicon with cache buster - forces browser to load fresh */}
+        <link rel="icon" type="image/png" href="/images/logo.png?v=2" />
+        <link rel="shortcut icon" href="/images/logo.png?v=2" />
+        <link rel="apple-touch-icon" href="/images/logo.png?v=2" />
       </head>
       <body className={`${inter.className} min-h-screen antialiased`}>
         <ParticleTrail />
