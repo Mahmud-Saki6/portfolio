@@ -84,6 +84,26 @@ export const applicationProjects = [
       "Lucide React",
     ],
   },
+  {
+    id: "devquiz",
+    title: "DevQuiz",
+    description:
+      "AI-powered programming quiz platform with dynamic questions, code snippets, instant feedback, and performance analytics.",
+    image: "/images/applications/devquiz.png",
+    imageAlt: "DevQuiz sign-in screen",
+    liveUrl: "https://dev-quiz-olive.vercel.app",
+
+    tech: [
+      "Next.js 14",
+      "TypeScript",
+      "MUI",
+      "Redux Toolkit",
+      "Prisma",
+      "PostgreSQL",
+      "Docker",
+      "Gemini API",
+    ],
+  },
 ];
 
 // ========== UI/UX DESIGN PROJECTS ==========

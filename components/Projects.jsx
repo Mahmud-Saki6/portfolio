@@ -11,13 +11,13 @@ import ProjectCard from "./ProjectCard";
 import UIUXCard from "./UIUXCard";
 
 const tabs = [
+  { id: "applications", label: "Applications", icon: "fa-rocket" },
   { id: "web", label: "Web Development", icon: "fa-code" },
   { id: "uiux", label: "UI / UX Design", icon: "fa-pen-nib" },
-  { id: "applications", label: "Applications", icon: "fa-rocket" },
 ];
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("web");
+  const [activeTab, setActiveTab] = useState("applications");
 
   return (
     <section id="projects" className="relative bg-palette-bg py-12 sm:py-14 lg:py-16">
@@ -53,8 +53,12 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Mobile: 1 col · Laptop (lg): 3 cols · Desktop (xl+): 4 cols */}
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 xl:grid-cols-4 lg:gap-5 xl:gap-6">
+        {/* Mobile: 1 · Tablet (md): 2 · Desktop (xl+): 4 */}
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4 md:gap-5 xl:gap-6">
+          {activeTab === "applications" &&
+            applicationProjects.map((project) => (
+              <ProjectCard key={project.id} {...project} />
+            ))}
           {activeTab === "web" &&
             webProjects.map((project) => (
               <ProjectCard key={project.id} {...project} />
@@ -62,10 +66,6 @@ export default function Projects() {
           {activeTab === "uiux" &&
             uiuxProjects.map((project) => (
               <UIUXCard key={project.id} {...project} />
-            ))}
-          {activeTab === "applications" &&
-            applicationProjects.map((project) => (
-              <ProjectCard key={project.id} {...project} />
             ))}
         </div>
       </div>

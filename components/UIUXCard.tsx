@@ -69,7 +69,7 @@ export default function UIUXCard({
             alt={imageAlt || title}
             fill
             className="object-cover transition duration-500 group-hover:scale-110"
-            sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 34vw, 25vw"
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
           />
         ) : (
           <Image
@@ -79,7 +79,7 @@ export default function UIUXCard({
             className={`object-cover transition duration-500 group-hover:scale-110 ${
               isSvg ? "object-contain bg-palette-bg/90 p-6" : ""
             }`}
-            sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 34vw, 25vw"
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
             unoptimized={isSvg}
           />
         )}

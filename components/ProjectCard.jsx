@@ -6,6 +6,7 @@ export default function ProjectCard({
   image,
   imageAlt,
   liveUrl,
+  liveDemoLabel,
   tech,
 }) {
   const isRemote = image?.startsWith("http");
@@ -20,7 +21,7 @@ export default function ProjectCard({
             alt={imageAlt || title}
             fill
             className="object-cover transition duration-500 group-hover:scale-110"
-            sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 34vw, 25vw"
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
           />
         ) : (
           <Image
@@ -30,7 +31,7 @@ export default function ProjectCard({
             className={`object-cover transition duration-500 group-hover:scale-110 ${
               isSvg ? "object-contain bg-palette-bg/90 p-6" : ""
             }`}
-            sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 34vw, 25vw"
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
             unoptimized={isSvg}
           />
         )}
@@ -60,6 +61,17 @@ export default function ProjectCard({
         <p className="mb-3 text-xs leading-relaxed text-[var(--text-secondary)]">
           {description}
         </p>
+        {liveDemoLabel ? (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-neon-outline mb-3 inline-flex w-full justify-center sm:w-auto"
+          >
+            <i className="fas fa-external-link-alt text-[11px]" aria-hidden />
+            {liveDemoLabel}
+          </a>
+        ) : null}
         <div className="flex flex-wrap gap-1.5">
           {tech.map((tag) => (
             <span key={tag} className="tech-chip">
