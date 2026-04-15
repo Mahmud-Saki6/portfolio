@@ -23,8 +23,8 @@ export default function About() {
               and software architecture.
             </p>
             <p>
-              I'm driven by technology's power to solve real problems. I constantly learn,
-              build, and refine because great code creates experiences people love. I'm
+              I&apos;m driven by technology&apos;s power to solve real problems. I constantly learn,
+              build, and refine because great code creates experiences people love. I&apos;m
               seeking a role where I can contribute, grow, and build impact.
             </p>
 
