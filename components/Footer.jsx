@@ -11,13 +11,11 @@ const quickLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
-// Tech stacks as simple groups
 const techStacks = [
   { name: "MERN", icon: "fa-react", color: "#22d3ee" },
   { name: "UI/UX Design", icon: "fa-pen-nib", color: "#93BF54" },
   { name: "AI/ML", icon: "fa-brain", color: "#f97316" },
   { name: "DevOps", icon: "fa-cloud", color: "#3b82f6" },
-
 ];
 
 const socials = [
@@ -81,12 +79,13 @@ export default function Footer() {
           padding: "40px 0 0",
         }}
       >
-        {/* ── 4 Column Grid ── */}
+        {/* Responsive Grid - Changes based on screen size */}
         <div
+          className="footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "24px",
+            gap: "32px",
             marginBottom: "32px",
           }}
         >
@@ -101,11 +100,11 @@ export default function Footer() {
                 }}
               >
                 <Image
-                  src="/images/logo.png"  // Changed from portfolio-logo.png
+                  src="/images/logo.png"
                   alt="Mahmud Sakib portfolio logo"
                   width={168}
                   height={56}
-                  style={{ width: "auto", height: 50, objectFit: "contain" }}
+                  style={{ width: "auto", height: 45, objectFit: "contain" }}
                 />
               </div>
               <div>
@@ -190,7 +189,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* COLUMN 3: Tech Stack (as simple groups) */}
+          {/* COLUMN 3: Tech Stack */}
           <div>
             <h3
               style={{
@@ -237,7 +236,6 @@ export default function Footer() {
 
           {/* COLUMN 4: Location + Connect */}
           <div>
-            {/* Location Map Indicator */}
             <h3
               style={{
                 fontSize: 13,
@@ -276,7 +274,6 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Connect Section */}
             <h3
               style={{
                 fontSize: 13,
@@ -291,7 +288,7 @@ export default function Footer() {
               Connect
             </h3>
 
-            <div style={{ display: "flex", justifyContent: "center", gap: 10 }}>
+            <div style={{ display: "flex", justifyContent: "center", gap: 10, flexWrap: "wrap" }}>
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -300,8 +297,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={s.label}
                   style={{
-                    width: 32,
-                    height: 32,
+                    width: 36,
+                    height: 36,
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
@@ -309,7 +306,7 @@ export default function Footer() {
                     background: "rgba(168,85,247,0.1)",
                     border: "1px solid rgba(168,85,247,0.25)",
                     color: "#94a3b8",
-                    fontSize: 13,
+                    fontSize: 14,
                     textDecoration: "none",
                     transition: "all 0.25s",
                   }}
@@ -335,22 +332,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Bottom bar ── */}
+        {/* Bottom bar */}
         <div
           style={{
             borderTop: "1px solid rgba(255,255,255,0.06)",
-            padding: "16px 0 22px",
+            padding: "20px 0 24px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
             gap: 12,
+            flexDirection: "row",
           }}
         >
-          <p style={{ fontSize: 12, color: "#475569", margin: 0, textAlign: "center", flex: 1 }}>
+          <p style={{ fontSize: 11, color: "#475569", margin: 0, textAlign: "center", flex: 1 }}>
             © {year} Mahmud Sakib. All Rights Reserved.
           </p>
-          <p style={{ fontSize: 12, color: "#475569", margin: 0, textAlign: "center", flex: 1 }}>
+          <p style={{ fontSize: 11, color: "#475569", margin: 0, textAlign: "center", flex: 1 }}>
             Built with{" "}
             <span style={{ color: "#00ffaa", fontWeight: 600 }}>Next.js</span>
             {" & "}
@@ -365,6 +363,7 @@ export default function Footer() {
           50% { opacity:.4; transform:scale(.7); }
         }
         
+        /* Tablet: 2 columns */
         @media (max-width: 1024px) {
           .footer-grid {
             grid-template-columns: repeat(2, 1fr) !important;
@@ -372,10 +371,43 @@ export default function Footer() {
           }
         }
         
-        @media (max-width: 640px) {
+        /* Mobile: 1 column with better spacing */
+        @media (max-width: 768px) {
           .footer-grid {
             grid-template-columns: 1fr !important;
+            gap: 48px !important;
+          }
+          
+          /* Better touch targets for mobile */
+          .footer-grid a,
+          .footer-grid button {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+          }
+          
+          /* Adjust logo size on mobile */
+          .footer-grid img {
+            max-width: 140px;
+            height: auto;
+          }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+          .footer-grid {
             gap: 40px !important;
+          }
+          
+          .footer-grid h3 {
+            font-size: 12px !important;
+            margin-bottom: 12px !important;
+          }
+          
+          .footer-grid p,
+          .footer-grid li,
+          .footer-grid span {
+            font-size: 12px !important;
           }
         }
       `}</style>

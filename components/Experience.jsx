@@ -3,22 +3,30 @@ const items = [
     date: "02/2025 – 08/2025",
     title: "Software Development",
     company: "Ether Technologies Limited",
-    body: `Developed dynamic, responsive user interfaces for live client websites including Uuro, Bakkah Holdings, and Sajida Hospital using React, Next.js, Tailwind, and MUI.`,
+    body: `Designed fully interactive prototypes in Figma, then developed dynamic, responsive user interfaces for live client websites including Uuro, Masoutfits, Bakkah Holdings, and Sajida Hospital. `,
     bullets: [
-      "Designed client-approved mockups in Figma",
-      "Managed website content using headless CMS",
-      "Performed manual QA testing using BugHerd",
+      "Created complete Figma designs including wireframes, mockups, and interactive prototypes",
+      "Implemented frontend architectures with React, Next.js, and TypeScript",
+      "Ensured data security with JWT authentication and secure API practices",
+      "Created and tested RESTful APIs using Postman",
+      "Deployed and managed websites on cPanel, Vercel, and Netlify",
+      "Managed dynamic content using MAVE headless CMS",
+      "Performed WordPress content management and data entry",
+      "Conducted QA testing with BugHerd and resolved issues collaboratively",
     ],
   },
   {
-    date: "09/2024 – 12/2024",
+    date: "08/2024 – 02/2025",
     title: "Data Analyst",
     company: "SEBPO",
-    body: `Executed comprehensive background research to identify potential criminal data, leveraging multiple sources for verification.`,
+    body: `Conducted due diligence research by analyzing English news articles, legal documents, and public records to identify potential risks and criminal data across multiple sources.`,
     bullets: [
-      "Maintained accuracy of intelligence database",
-      "Performed precise and timely data entry",
-      "Verified data from multiple sources",
+      "Reviewed and cross-matched demographic information from various databases to identify potential matches",
+      "Analyzed and summarized complex English content with strong attention to detail",
+      "Aggregated relevant information from news articles and public records for client reports",
+      "Maintained accuracy and integrity of intelligence database",
+      "Performed precise and timely data entry with zero-error tolerance",
+      "Verified data from multiple sources to ensure 100% accuracy",
     ],
   },
 ];
@@ -66,7 +74,7 @@ export default function Experience() {
                     {item.date}
                   </span>
                   <h3 className="text-base font-semibold text-[var(--text-primary)]">{item.title}</h3>
-                  <h4 className="mb-2 text-sm font-medium text-[var(--text-secondary)]">
+                  <h4 className="mb-2 text-sm font-medium text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]">
                     {item.company}
                   </h4>
                   <p className="mb-3 text-sm leading-relaxed text-[var(--text-secondary)] text-justify">{item.body}</p>

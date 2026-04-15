@@ -31,8 +31,8 @@ export default function Hero() {
               Mahmud Sakib
             </span>
           </h1>
-          <p className="mb-6 max-w-xl text-[15px] leading-[1.65] text-[var(--text-secondary)] text-justify lg:max-w-xl lg:text-left">
-            A motivated Computer Science graduate passionate about building full-stack web applications and SaaS products with a strong UI/UX focus. Experienced in React/Next.js, Node.js/NestJS, and PostgreSQL. Great code deserves great user experience.
+          <p className="mb-6 max-w-xl text-[15px] leading-[1.65] text-[var(--text-secondary)] text-justify lg:max-w-lg lg:text-left">
+          I'm a motivated Computer Science graduate who turns ideas into real, functional web applications. I specialize in building full-stack SaaS products from database design to polished UI/UX. My toolkit includes React, Next.js, Node.js, and PostgreSQL, but my real strength is understanding what users need and delivering experiences they genuinely enjoy.
           </p>
           <div className="mb-5 flex flex-wrap justify-center gap-2.5 lg:justify-start">
             <a href="#projects" className="btn-neon-primary">

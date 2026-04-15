@@ -1,37 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
-const slides = [
-  {
-    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
-    alt: "Coding",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1674&q=80",
-    alt: "Web Development",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1764&q=80",
-    alt: "Design",
-  },
-];
 
 export default function About() {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCurrent((c) => (c + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(id);
-  }, []);
-
-  const showSlide = (n) => {
-    setCurrent((n + slides.length) % slides.length);
-  };
-
   return (
     <section
       id="about"
@@ -44,17 +15,17 @@ export default function About() {
         </h2>
 
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10">
-          <div className="order-2 max-w-prose space-y-4 text-[15px] leading-[1.65] text-[var(--text-secondary)] text-justify lg:order-1 lg:max-w-none">
+          <div className="order-2 max-w-md space-y-4 text-[15px] leading-[1.65] text-[var(--text-secondary)] text-justify lg:order-1 lg:max-w-lg">
             <p>
-              I&apos;m a passionate frontend developer with a strong foundation
-              in computer science and engineering. I specialize in creating
-              responsive, user-friendly web applications using modern
-              technologies like React, Next.js, and Tailwind CSS.
+              I completed my schooling under the Cambridge Board and earned my Bachelor of
+              Science in Computer Science & Engineering (CSE) from North South University.
+              My academic journey gave me a strong foundation in algorithms, data structures,
+              and software architecture.
             </p>
             <p>
-              I&apos;m dedicated to delivering high-quality, user-focused
-              results and continuously expanding my skill set to stay current
-              with the latest web development trends and best practices.
+              I'm driven by technology's power to solve real problems. I constantly learn,
+              build, and refine because great code creates experiences people love. I'm
+              seeking a role where I can contribute, grow, and build impact.
             </p>
 
             <div className="flex flex-col gap-3 py-4 sm:flex-row sm:justify-center sm:gap-4 lg:justify-start">
@@ -82,58 +53,35 @@ export default function About() {
             </a>
           </div>
 
+          {/* Two Photos Layout - Mobile: 1 column, Desktop: 2 columns */}
           <div className="order-1 lg:order-2">
-            <div className="overflow-hidden rounded-xl border border-palette-purple/30 bg-[var(--bg-card)] shadow-xl shadow-black/40 ring-1 ring-palette-cyan/15 backdrop-blur-xl">
-              <div className="relative h-[220px] overflow-hidden sm:h-[260px] md:h-[300px]">
-                {slides.map((slide, i) => (
-                  <div
-                    key={slide.alt}
-                    className={`absolute inset-0 transition-opacity duration-500 ${
-                      i === current ? "z-[1] opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <Image
-                      src={slide.src}
-                      alt={slide.alt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-center justify-between border-t border-white/5 bg-palette-bg/60 px-4 py-3 backdrop-blur-sm">
-                <button
-                  type="button"
-                  onClick={() => showSlide(current - 1)}
-                  className="rounded-lg p-2 text-palette-cyan transition hover:bg-white/5 hover:text-palette-purple hover:shadow-glow-purple"
-                  aria-label="Previous slide"
-                >
-                  <i className="fas fa-chevron-left" />
-                </button>
-                <div className="flex gap-2">
-                  {slides.map((_, i) => (
-                    <button
-                      key={`dot-${i}`}
-                      type="button"
-                      onClick={() => setCurrent(i)}
-                      className={`h-2.5 w-2.5 rounded-full transition ${
-                        i === current
-                          ? "bg-palette-cyan shadow-glow-cyan"
-                          : "bg-white/20 hover:bg-palette-purple/60"
-                      }`}
-                      aria-label={`Go to slide ${i + 1}`}
-                    />
-                  ))}
+            <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-3">
+              {/* Photo 1 */}
+              <div className="md:mt-8 sm:mt-0 group relative overflow-hidden rounded-xl border border-palette-purple/30 bg-[var(--bg-card)] shadow-xl shadow-black/40 ring-1 ring-palette-cyan/15 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-glow-purple">
+                <div className="relative aspect-[3/4] w-full">
+                  <Image
+                    src="/images/about2.jpg"
+                    alt="Mahmud Sakib - Portrait 2"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 90vw, 25vw"
+                  />
                 </div>
-                <button
-                  type="button"
-                  onClick={() => showSlide(current + 1)}
-                  className="rounded-lg p-2 text-palette-cyan transition hover:bg-white/5 hover:text-palette-purple hover:shadow-glow-purple"
-                  aria-label="Next slide"
-                >
-                  <i className="fas fa-chevron-right" />
-                </button>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
+
+              {/* Photo 2 */}
+              <div className="md:mb-8 sm:mb-0 group relative overflow-hidden rounded-xl border border-palette-purple/30 bg-[var(--bg-card)] shadow-xl shadow-black/40 ring-1 ring-palette-cyan/15 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-glow-purple">
+                <div className="relative aspect-[3/4] w-full">
+                  <Image
+                    src="/images/about1.jpg"
+                    alt="Mahmud Sakib - Portrait 1"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 90vw, 25vw"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
             </div>
           </div>
