@@ -23,11 +23,8 @@ export default function About() {
               and software architecture.
             </p>
             <p>
-              I&apos;m driven by technology&apos;s power to solve real problems. I constantly learn,
-              build, and refine because great code creates experiences people love. I&apos;m
-              seeking a role where I can contribute, grow, and build impact.
+              Solving real problems through technology is what drives me. I constantly learn, build, and refine my craft because great code creates experiences people love. I am looking for a role where I can contribute, grow, and make a meaningful impact.
             </p>
-
             <div className="flex flex-col gap-3 py-4 sm:flex-row sm:justify-center sm:gap-4 lg:justify-start">
               <div className="stat-card">
                 <div className="stat-number">10+</div>
@@ -56,11 +53,11 @@ export default function About() {
           {/* Two Photos Layout - Mobile: 1 column, Desktop: 2 columns */}
           <div className="order-1 lg:order-2">
             <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-3">
-              {/* Photo 1 */}
+              {/* Photo 2 */}
               <div className="md:mt-8 sm:mt-0 group relative overflow-hidden rounded-xl border border-palette-purple/30 bg-[var(--bg-card)] shadow-xl shadow-black/40 ring-1 ring-palette-cyan/15 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-glow-purple">
                 <div className="relative aspect-[3/4] w-full">
                   <Image
-                    src="/images/about2.jpg"
+                    src="/images/ab2.jpg"
                     alt="Mahmud Sakib - Portrait 2"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -70,11 +67,11 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
 
-              {/* Photo 2 */}
+              {/* Photo 1 */}
               <div className="md:mb-8 sm:mb-0 group relative overflow-hidden rounded-xl border border-palette-purple/30 bg-[var(--bg-card)] shadow-xl shadow-black/40 ring-1 ring-palette-cyan/15 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-glow-purple">
                 <div className="relative aspect-[3/4] w-full">
                   <Image
-                    src="/images/about1.jpg"
+                    src="/images/ab1.jpg"
                     alt="Mahmud Sakib - Portrait 1"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
