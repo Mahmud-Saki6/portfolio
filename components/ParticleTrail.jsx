@@ -2,6 +2,16 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+function shouldEnableParticles() {
+  if (typeof window === "undefined") return false;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return false;
+  }
+  const minLg = window.matchMedia("(min-width: 1024px)");
+  const finePointer = window.matchMedia("(pointer: fine)");
+  return minLg.matches && finePointer.matches;
+}
+
 export default function ParticleTrail() {
   const [particles, setParticles] = useState([]);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -38,10 +48,26 @@ export default function ParticleTrail() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-    setVisible(true);
+
+    const update = () => {
+      setVisible(shouldEnableParticles());
+    };
+
+    update();
+
+    const mqLg = window.matchMedia("(min-width: 1024px)");
+    const mqPointer = window.matchMedia("(pointer: fine)");
+    const mqMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    mqLg.addEventListener("change", update);
+    mqPointer.addEventListener("change", update);
+    mqMotion.addEventListener("change", update);
+
+    return () => {
+      mqLg.removeEventListener("change", update);
+      mqPointer.removeEventListener("change", update);
+      mqMotion.removeEventListener("change", update);
+    };
   }, []);
 
   useEffect(() => {

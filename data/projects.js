@@ -104,6 +104,25 @@ export const applicationProjects = [
       "Gemini API",
     ],
   },
+  {
+    id: "surahflow",
+    title: "SurahFlow",
+    description:
+      "A full-featured Quran reader with 114 surahs, Arabic/English text, verse audio, translation search, adjustable fonts/themes, and settings that persist in the browser.",
+    image: "/images/applications/surahflow.png",
+    imageAlt: "SurahFlow Quran reader — surah grid and search",
+    liveUrl: "https://quran-application-theta.vercel.app/",
+    liveDemoLabel: "Live Demo",
+    tech: [
+      "Next.js 16",
+      "TypeScript",
+      "Tailwind CSS",
+      "Hono",
+      "SQLite",
+      "Quran.com API",
+      "Web Speech API",
+    ],
+  },
 ];
 
 // ========== UI/UX DESIGN PROJECTS ==========

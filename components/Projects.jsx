@@ -53,7 +53,7 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Mobile: 1 · Tablet (md): 2 · Desktop (xl+): 4 */}
+        {/* Mobile: 1 · md: 2 · xl+: 4 (5th card wraps to next row) */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4 md:gap-5 xl:gap-6">
           {activeTab === "applications" &&
             applicationProjects.map((project) => (

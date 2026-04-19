@@ -61,17 +61,7 @@ export default function ProjectCard({
         <p className="mb-3 text-xs leading-relaxed text-[var(--text-secondary)]">
           {description}
         </p>
-        {liveDemoLabel ? (
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-neon-outline mb-3 inline-flex w-full justify-center sm:w-auto"
-          >
-            <i className="fas fa-external-link-alt text-[11px]" aria-hidden />
-            {liveDemoLabel}
-          </a>
-        ) : null}
+        
         <div className="flex flex-wrap gap-1.5">
           {tech.map((tag) => (
             <span key={tag} className="tech-chip">
