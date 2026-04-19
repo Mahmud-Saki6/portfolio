@@ -112,15 +112,15 @@ export const applicationProjects = [
     image: "/images/applications/surahflow.png",
     imageAlt: "SurahFlow Quran reader — surah grid and search",
     liveUrl: "https://quran-application-theta.vercel.app/",
-    liveDemoLabel: "Live Demo",
+  
     tech: [
       "Next.js 16",
       "TypeScript",
       "Tailwind CSS",
       "Hono",
       "SQLite",
-      "Quran.com API",
-      "Web Speech API",
+      "Node.js",
+  
     ],
   },
 ];
