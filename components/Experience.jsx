@@ -1,5 +1,17 @@
 const items = [
   {
+    date: "08/2026 – Present",
+    title: "Founder & CEO",
+    company: "Crefix AI",
+    link: { label: "Visit crefixai.com", href: "https://www.crefixai.com/" },
+    body: `Founded and lead an AI-augmented outsourcing agency that helps UK businesses handle operations, software development, QA, finance, and digital marketing through a managed remote team — replacing slow, manual BPO with faster, transparent, AI-assisted delivery.`,
+    bullets: [
+      "Built and lead a Bangladesh-based team delivering ops, software development, AI/data, and full-execution services to UK client agencies and startups",
+      "Designed a three-tier service model (Essential, Professional, Enterprise) spanning HR/admin, software development, AI & data, marketing, and dedicated execution teams",
+      "Introduced AI-assisted workflows and daily reporting pipelines — time tracking, live task boards, and daily written updates — in place of traditional manual BPO processes",
+    ],
+  },
+  {
     date: "04/2026 – 07/2026",
     title: "Compliance Executive",
     company: "First4Freelancers",
@@ -100,6 +112,17 @@ export default function Experience() {
                       <li key={b}>{b}</li>
                     ))}
                   </ul>
+                  {item.link && (
+                    <a
+                      href={item.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-palette-cyan transition hover:text-palette-neon"
+                    >
+                      {item.link.label}
+                      <i className="fas fa-arrow-up-right-from-square text-[10px]" />
+                    </a>
+                  )}
                 </div>
               </li>
             ))}

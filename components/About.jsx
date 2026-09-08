@@ -24,15 +24,27 @@ export default function About() {
               architecture.
             </p>
             <p>
-              My career has taken a path that bridges engineering with analysis
-              and operations. I&apos;ve built full-stack SaaS products end to
-              end as a Software Developer, conducted due-diligence data analysis
-              for US banks, and managed international compliance operations for
-              UK healthcare clients as a Compliance Executive. Each role
-              sharpened a different muscle — clean code, careful data, and
-              dependable process — and together they shape how I approach every
-              problem: methodically, with an eye for detail and a genuine care
-              for the people on the other end of the work.
+              My career bridges engineering with analysis and operations —
+              building full-stack SaaS products as a Software Developer, running
+              due-diligence analysis for US banks, and managing compliance for
+              UK healthcare clients. Different roles, same habit: careful,
+              methodical work that holds up under scrutiny.
+            </p>
+            <p>
+              That combination is now the foundation of{" "}
+              <a
+                href="https://www.crefixai.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-palette-neon underline decoration-palette-neon/40 underline-offset-2 hover:text-white"
+              >
+                Crefix AI
+              </a>
+              , a company I founded and lead as CEO. We&apos;re a
+              Bangladesh-based remote team helping UK businesses handle
+              operations, software development, QA, and digital marketing
+              through AI-assisted workflows — trading slow, manual outsourcing
+              for faster, transparent execution.
             </p>
 
             <div className="flex flex-col gap-3 py-4 sm:flex-row sm:justify-center sm:gap-4 lg:justify-start">
@@ -50,14 +62,24 @@ export default function About() {
               </div>
             </div>
 
-            <a
-              href="https://drive.google.com/drive/folders/1GNxdi_2MvfqYiWN88izuvWNujBcSW_Le"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-neon-primary inline-flex"
-            >
-              Download Resume
-            </a>
+            <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
+              <a
+                href="https://drive.google.com/drive/folders/1GNxdi_2MvfqYiWN88izuvWNujBcSW_Le"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-neon-primary inline-flex"
+              >
+                Download Resume
+              </a>
+              <a
+                href="https://www.crefixai.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-neon-outline inline-flex"
+              >
+                Visit Crefix AI
+              </a>
+            </div>
           </div>
 
           {/* Two Photos Layout - Mobile: 1 column, Desktop: 2 columns */}

@@ -19,14 +19,23 @@ const techStacks = [
 ];
 
 const socials = [
-  { href: "https://github.com/Mahmud-Saki6", icon: "fa-github", label: "GitHub" },
+  {
+    href: "https://www.crefixai.com/",
+    image: "/images/crefix-logo.png",
+    label: "Crefix AI",
+  },
+  {
+    href: "https://github.com/Mahmud-Saki6",
+    icon: "fa-github",
+    label: "GitHub",
+    color: "#f0f6fc",
+  },
   {
     href: "https://www.linkedin.com/in/mahmud-sakib-3096b82b6/",
     icon: "fa-linkedin-in",
     label: "LinkedIn",
+    color: "#0a66c2",
   },
-  { href: "#", icon: "fa-twitter", label: "Twitter" },
-  { href: "#", icon: "fa-facebook-f", label: "Facebook" },
 ];
 
 export default function Footer() {
@@ -50,7 +59,8 @@ export default function Footer() {
           transform: "translateX(-50%)",
           width: "60%",
           height: "1px",
-          background: "linear-gradient(90deg, transparent, #00ffaa 30%, #a855f7 70%, transparent)",
+          background:
+            "linear-gradient(90deg, transparent, #00ffaa 30%, #a855f7 70%, transparent)",
           boxShadow: "0 0 20px rgba(0,255,170,0.3)",
         }}
         aria-hidden="true"
@@ -91,7 +101,15 @@ export default function Footer() {
         >
           {/* COLUMN 1: Brand */}
           <div style={{ textAlign: "center" }}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "12px",
+                marginBottom: "16px",
+              }}
+            >
               <div
                 style={{
                   display: "flex",
@@ -108,13 +126,34 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <div style={{ fontSize: 15, fontWeight: 600, color: "#f1f5f9" }}>Mahmud Sakib</div>
-                <div style={{ fontSize: 12, color: "#64748b", letterSpacing: "0.04em" }}>Software Developer</div>
+                <div
+                  style={{ fontSize: 15, fontWeight: 600, color: "#f1f5f9" }}
+                >
+                  Mahmud Sakib
+                </div>
+                <div
+                  style={{
+                    fontSize: 12,
+                    color: "#64748b",
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  Software Developer · Founder, Crefix AI
+                </div>
               </div>
             </div>
 
-            <p style={{ fontSize: 12, color: "#94a3b8", lineHeight: 1.55, margin: "0 0 12px", textAlign: "center" }}>
-              A motivated CSE graduate building full-stack SaaS products with UI/UX focus.
+            <p
+              style={{
+                fontSize: 12,
+                color: "#94a3b8",
+                lineHeight: 1.55,
+                margin: "0 0 12px",
+                textAlign: "center",
+              }}
+            >
+              A motivated CSE graduate building full-stack SaaS products, now
+              running Crefix AI, an AI-powered ops team for UK businesses.
             </p>
 
             <div
@@ -160,7 +199,17 @@ export default function Footer() {
             >
               Quick Links
             </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+            <ul
+              style={{
+                listStyle: "none",
+                margin: 0,
+                padding: 0,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -204,7 +253,17 @@ export default function Footer() {
             >
               Tech Stack
             </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+            <ul
+              style={{
+                listStyle: "none",
+                margin: 0,
+                padding: 0,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
               {techStacks.map((stack) => (
                 <li key={stack.name}>
                   <span
@@ -226,7 +285,10 @@ export default function Footer() {
                       e.currentTarget.style.transform = "translateX(0)";
                     }}
                   >
-                    <i className={`fas ${stack.icon}`} style={{ fontSize: 11 }} />
+                    <i
+                      className={`fas ${stack.icon}`}
+                      style={{ fontSize: 11 }}
+                    />
                     {stack.name}
                   </span>
                 </li>
@@ -264,7 +326,10 @@ export default function Footer() {
                   marginBottom: 10,
                 }}
               >
-                <i className="fas fa-map-marker-alt" style={{ fontSize: 16, color: "#00ffaa" }} />
+                <i
+                  className="fas fa-map-marker-alt"
+                  style={{ fontSize: 16, color: "#00ffaa" }}
+                />
               </div>
               <p style={{ fontSize: 13, color: "#94a3b8", margin: 0 }}>
                 Dhaka, Bangladesh
@@ -288,7 +353,14 @@ export default function Footer() {
               Connect
             </h3>
 
-            <div style={{ display: "flex", justifyContent: "center", gap: 10, flexWrap: "wrap" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: 10,
+                flexWrap: "wrap",
+              }}
+            >
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -296,6 +368,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
+                  title={s.label}
                   style={{
                     width: 36,
                     height: 36,
@@ -305,7 +378,7 @@ export default function Footer() {
                     justifyContent: "center",
                     background: "rgba(168,85,247,0.1)",
                     border: "1px solid rgba(168,85,247,0.25)",
-                    color: "#94a3b8",
+                    color: s.color || "#94a3b8",
                     fontSize: 14,
                     textDecoration: "none",
                     transition: "all 0.25s",
@@ -313,19 +386,30 @@ export default function Footer() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = "rgba(168,85,247,0.22)";
                     e.currentTarget.style.borderColor = "rgba(168,85,247,0.6)";
-                    e.currentTarget.style.color = "#a855f7";
-                    e.currentTarget.style.boxShadow = "0 0 18px rgba(168,85,247,0.35)";
+                    e.currentTarget.style.color = s.color || "#a855f7";
+                    e.currentTarget.style.boxShadow =
+                      "0 0 18px rgba(168,85,247,0.35)";
                     e.currentTarget.style.transform = "translateY(-2px)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "rgba(168,85,247,0.1)";
                     e.currentTarget.style.borderColor = "rgba(168,85,247,0.25)";
-                    e.currentTarget.style.color = "#94a3b8";
+                    e.currentTarget.style.color = s.color || "#94a3b8";
                     e.currentTarget.style.boxShadow = "none";
                     e.currentTarget.style.transform = "none";
                   }}
                 >
-                  <i className={`fab ${s.icon}`} />
+                  {s.image ? (
+                    <Image
+                      src={s.image}
+                      alt=""
+                      width={22}
+                      height={22}
+                      style={{ objectFit: "contain" }}
+                    />
+                  ) : (
+                    <i className={`fab ${s.icon}`} aria-hidden="true" />
+                  )}
                 </a>
               ))}
             </div>
@@ -345,14 +429,32 @@ export default function Footer() {
             flexDirection: "row",
           }}
         >
-          <p style={{ fontSize: 11, color: "#475569", margin: 0, textAlign: "center", flex: 1 }}>
+          <p
+            style={{
+              fontSize: 11,
+              color: "#475569",
+              margin: 0,
+              textAlign: "center",
+              flex: 1,
+            }}
+          >
             © {year} Mahmud Sakib. All Rights Reserved.
           </p>
-          <p style={{ fontSize: 11, color: "#475569", margin: 0, textAlign: "center", flex: 1 }}>
+          <p
+            style={{
+              fontSize: 11,
+              color: "#475569",
+              margin: 0,
+              textAlign: "center",
+              flex: 1,
+            }}
+          >
             Built with{" "}
             <span style={{ color: "#00ffaa", fontWeight: 600 }}>Next.js</span>
             {" & "}
-            <span style={{ color: "#a855f7", fontWeight: 600 }}>Tailwind CSS</span>
+            <span style={{ color: "#a855f7", fontWeight: 600 }}>
+              Tailwind CSS
+            </span>
           </p>
         </div>
       </div>

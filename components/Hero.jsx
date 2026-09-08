@@ -18,10 +18,21 @@ export default function Hero() {
 
       <div className="relative mx-auto grid w-[92%] max-w-6xl grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10">
         <div className="order-2 text-center lg:order-1 lg:text-left">
-          <span className="hero-badge mb-3">
-            <span className="hero-badge-dot" aria-hidden="true" />
-            Software Developer
-          </span>
+          <div className="mb-3 flex flex-wrap justify-center gap-2 lg:justify-start">
+            <span className="hero-badge">
+              <span className="hero-badge-dot" aria-hidden="true" />
+              Software Developer
+            </span>
+            <a
+              href="https://www.crefixai.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-badge transition hover:border-palette-purple hover:text-palette-purple"
+            >
+              <i className="fas fa-rocket text-[11px]" aria-hidden="true" />
+              Founder, Crefix AI
+            </a>
+          </div>
           <h1 className="mb-4 text-[clamp(1.625rem,4vw,2.25rem)] font-semibold leading-[1.2] tracking-tight text-white">
             Hi, I&apos;m{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -32,7 +43,18 @@ export default function Hero() {
             Full-stack engineer (React, Next, Node, Postgres) building
             intuitive, reliable web apps. My background in US banking
             due-diligence and UK healthcare compliance brings forensic precision
-            to your data, processes, and code.
+            to your data, processes, and code. I now put all three to work as
+            founder of{" "}
+            <a
+              href="https://www.crefixai.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-palette-neon underline decoration-palette-neon/40 underline-offset-2 hover:text-white"
+            >
+              Crefix AI
+            </a>
+            , a remote ops-and-software team helping UK businesses execute
+            faster.
           </p>
           <div className="mb-5 flex flex-wrap justify-center gap-2.5 lg:justify-start">
             <a href="#projects" className="btn-neon-primary">
