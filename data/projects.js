@@ -47,7 +47,8 @@ export const webProjects = [
     title: "Learned Books",
     description:
       "An e-commerce bookstore platform featuring curated academic and niche book collections, with a seamless shopping experience and customer review system.",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Learned Books bookstore homepage and catalog",
     liveUrl: "https://learned-books.vercel.app/",
     tech: ["Next.js 14", "TypeScript", "MUI", "Redux Toolkit"],
@@ -122,7 +123,7 @@ export const applicationProjects = [
     image: "/images/applications/surahflow.png",
     imageAlt: "SurahFlow Quran reader — surah grid and search",
     liveUrl: "https://quran-application-theta.vercel.app/",
-  
+
     tech: [
       "Next.js 16",
       "TypeScript",
@@ -130,7 +131,6 @@ export const applicationProjects = [
       "Hono",
       "SQLite",
       "Node.js",
-  
     ],
   },
 ];
@@ -144,7 +144,8 @@ export const uiuxProjects = [
       "Full website UI/UX design for Uuro — covering layout, typography, color system, and interactive component states.",
     image: "/images/uurodesign.png",
     imageAlt: "Uuro website Figma design",
-    figmaUrl: "https://www.figma.com/design/H2YagWQeZR6X67FTmEs1Tf/Uuro%7C-website",
+    figmaUrl:
+      "https://www.figma.com/design/H2YagWQeZR6X67FTmEs1Tf/Uuro%7C-website",
     tech: ["UI/UX Design", "Figma", "Website Design", "Prototyping"],
   },
   {
@@ -154,7 +155,8 @@ export const uiuxProjects = [
       "End-to-end UI/UX design for Sajida Hospital's web presence — information architecture, component library, and high-fidelity screens.",
     image: "/images/sajidadesign.png",
     imageAlt: "Sajida Hospital Figma design",
-    figmaUrl: "https://www.figma.com/design/3WpiT5Yb0LUIJIpaCrquxc/Sajida-Hospital-%7C-Website",
+    figmaUrl:
+      "https://www.figma.com/design/3WpiT5Yb0LUIJIpaCrquxc/Sajida-Hospital-%7C-Website",
     tech: ["UI/UX Design", "Healthcare", "Figma", "Wireframing"],
   },
   {
@@ -174,7 +176,8 @@ export const uiuxProjects = [
       "UI/UX design system and high-fidelity mockups for Bakkah Holdings — corporate visual language, grid system, and full page designs in Figma.",
     image: "/images/bakkah-figma.png",
     imageAlt: "Bakkah Holdings Figma design",
-    figmaUrl: "https://www.figma.com/design/cCFZc9KKde4mU3N2KSmX94/Bakkah-Holdings",
+    figmaUrl:
+      "https://www.figma.com/design/cCFZc9KKde4mU3N2KSmX94/Bakkah-Holdings",
     tech: ["UI/UX Design", "Corporate", "Figma", "Design System"],
   },
 ];
