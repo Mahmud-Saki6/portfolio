@@ -2,10 +2,7 @@ import Image from "next/image";
 
 function OrbitSatellite({ className, children }) {
   return (
-    <div
-      className={`hero-orbit-sat ${className}`}
-      aria-hidden="true"
-    >
+    <div className={`hero-orbit-sat ${className}`} aria-hidden="true">
       {children}
     </div>
   );
@@ -32,7 +29,10 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mb-6 max-w-xl text-[15px] leading-[1.65] text-[var(--text-secondary)] text-justify lg:max-w-lg lg:text-left">
-            I&apos;m a motivated Computer Science graduate who turns ideas into real, functional web applications. I specialize in building full-stack SaaS products from database design to polished UI/UX. My toolkit includes React, Next.js, Node.js, and PostgreSQL, but my real strength is understanding what users need and delivering experiences they genuinely enjoy.
+            Full-stack engineer (React, Next, Node, Postgres) building
+            intuitive, reliable web apps. My background in US banking
+            due-diligence and UK healthcare compliance brings forensic precision
+            to your data, processes, and code.
           </p>
           <div className="mb-5 flex flex-wrap justify-center gap-2.5 lg:justify-start">
             <a href="#projects" className="btn-neon-primary">
@@ -107,7 +107,10 @@ export default function Hero() {
                 </OrbitSatellite>
                 <OrbitSatellite className="hero-orbit-d hidden opacity-80 sm:flex sm:opacity-90">
                   <div className="flex h-full w-full items-center justify-center rounded-full border border-palette-neon/35 bg-palette-surface/95 text-palette-neon shadow-glow-neon ring-1 ring-palette-purple/25 backdrop-blur-sm">
-                    <i className="fab fa-python text-sm sm:text-base" aria-hidden="true" />
+                    <i
+                      className="fab fa-python text-sm sm:text-base"
+                      aria-hidden="true"
+                    />
                   </div>
                 </OrbitSatellite>
               </div>

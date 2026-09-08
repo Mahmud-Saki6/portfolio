@@ -17,21 +17,31 @@ export default function About() {
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="order-2 max-w-md space-y-4 text-[15px] leading-[1.65] text-[var(--text-secondary)] text-justify lg:order-1 lg:max-w-lg">
             <p>
-              I completed my schooling under the Cambridge Board and earned my Bachelor of
-              Science in Computer Science & Engineering (CSE) from North South University.
-              My academic journey gave me a strong foundation in algorithms, data structures,
-              and software architecture.
+              I completed my schooling under the Cambridge Board and earned my
+              Bachelor of Science in Computer Science & Engineering (CSE) from
+              North South University. My academic journey gave me a strong
+              foundation in algorithms, data structures, and software
+              architecture.
             </p>
             <p>
-              Solving real problems through technology is what drives me. I constantly learn, build, and refine my craft because great code creates experiences people love. I am looking for a role where I can contribute, grow, and make a meaningful impact.
+              My career has taken a path that bridges engineering with analysis
+              and operations. I&apos;ve built full-stack SaaS products end to
+              end as a Software Developer, conducted due-diligence data analysis
+              for US banks, and managed international compliance operations for
+              UK healthcare clients as a Compliance Executive. Each role
+              sharpened a different muscle — clean code, careful data, and
+              dependable process — and together they shape how I approach every
+              problem: methodically, with an eye for detail and a genuine care
+              for the people on the other end of the work.
             </p>
+
             <div className="flex flex-col gap-3 py-4 sm:flex-row sm:justify-center sm:gap-4 lg:justify-start">
               <div className="stat-card">
                 <div className="stat-number">10+</div>
                 <div className="stat-label">Projects</div>
               </div>
               <div className="stat-card">
-                <div className="stat-number">1</div>
+                <div className="stat-number">2+</div>
                 <div className="stat-label">Years Exp</div>
               </div>
               <div className="stat-card">

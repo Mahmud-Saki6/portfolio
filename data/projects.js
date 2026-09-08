@@ -42,6 +42,16 @@ export const webProjects = [
     liveUrl: "https://bakkahholdings.com/",
     tech: ["React", "Tailwind CSS", "Corporate"],
   },
+  {
+    id: "learned-books",
+    title: "Learned Books",
+    description:
+      "An e-commerce bookstore platform featuring curated academic and niche book collections, with a seamless shopping experience and customer review system.",
+    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Learned Books bookstore homepage and catalog",
+    liveUrl: "https://learned-books.vercel.app/",
+    tech: ["Next.js 14", "TypeScript", "MUI", "Redux Toolkit"],
+  },
 ];
 
 // ========== APPLICATIONS (full-stack / tools) ==========
@@ -58,12 +68,12 @@ export const applicationProjects = [
   },
   {
     id: "crefix-ai",
-    title: "Crefix AI (Figma Clone)",
+    title: "Crefixo",
     description:
       "A design tool inspired by Figma, powered by AI for smart design generation.",
     image: "/images/applications/crefix-ai.png",
-    imageAlt: "Crefix AI design tool dashboard",
-    liveUrl: "https://crefix-ai.vercel.app/",
+    imageAlt: "Crefixo design tool dashboard",
+    liveUrl: "https://crefixo.vercel.app/",
     tech: ["React", "Next.js 14", "MUI", "Gemini 3.0 API"],
   },
   {

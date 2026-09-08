@@ -1,31 +1,44 @@
 const items = [
   {
+    date: "04/2026 – 07/2026",
+    title: "Compliance Executive",
+    company: "First4Freelancers",
+    body: `Managed end-to-end compliance operations for UK healthcare staffing, verifying candidate credentials against regulatory standards and coordinating shift placements for international care-home clients.`,
+    bullets: [
+      "Verified candidate credentials against UK healthcare compliance and regulatory standards",
+      "Managed scheduling, placements, and generated leads from UK healthcare centers and care homes",
+      "Evaluated candidate eligibility and skills for shifts across UK care homes",
+      "Proactively communicated with international clients to collect required documentation",
+    ],
+  },
+  {
     date: "02/2025 – 08/2025",
     title: "Software Development",
-    company: "Ether Technologies Limited",
+    company: "Ether Technologies / WebAble Digital",
     body: `Designed fully interactive prototypes in Figma, then developed dynamic, responsive user interfaces for live client websites including Uuro, Masoutfits, Bakkah Holdings, and Sajida Hospital. `,
     bullets: [
-      "Created complete Figma designs including wireframes, mockups, and interactive prototypes",
+      "Delivered 6 client websites end-to-end using React, Next.js, Tailwind CSS, and Material-UI",
+      "Created original Figma designs from scratch — wireframes, design systems, and high-fidelity mockups — securing client approval before development",
       "Implemented frontend architectures with React, Next.js, and TypeScript",
       "Ensured data security with JWT authentication and secure API practices",
       "Created and tested RESTful APIs using Postman",
       "Deployed and managed websites on cPanel, Vercel, and Netlify",
       "Managed dynamic content using MAVE headless CMS",
       "Performed WordPress content management and data entry",
-      "Conducted QA testing with BugHerd and resolved issues collaboratively",
+      "Conducted QA testing with BugHerd; bug-free releases on every deadline",
     ],
   },
   {
     date: "08/2024 – 02/2025",
     title: "Data Analyst",
     company: "SEBPO",
-    body: `Conducted due diligence research by analyzing English news articles, legal documents, and public records to identify potential risks and criminal data across multiple sources.`,
+    body: `Conducted due diligence research for US banks, analyzing English news articles, legal documents, and public records to identify potential risks and restricted candidates across multiple sources.`,
     bullets: [
+      "Conducted due diligence for US banks, cross-referencing records to identify restricted candidates",
       "Reviewed and cross-matched demographic information from various databases to identify potential matches",
       "Analyzed and summarized complex English content with strong attention to detail",
       "Aggregated relevant information from news articles and public records for client reports",
-      "Maintained accuracy and integrity of intelligence database",
-      "Performed precise and timely data entry with zero-error tolerance",
+      "Categorized risk levels and flagged restricted candidates in compliance database",
       "Verified data from multiple sources to ensure 100% accuracy",
     ],
   },
@@ -73,11 +86,15 @@ export default function Experience() {
                   <span className="mb-2 inline-block rounded-full border border-palette-neon/30 bg-palette-neon/10 px-2.5 py-0.5 text-xs font-medium text-palette-neon shadow-glow-neon">
                     {item.date}
                   </span>
-                  <h3 className="text-base font-semibold text-[var(--text-primary)]">{item.title}</h3>
+                  <h3 className="text-base font-semibold text-[var(--text-primary)]">
+                    {item.title}
+                  </h3>
                   <h4 className="mb-2 text-sm font-medium text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]">
                     {item.company}
                   </h4>
-                  <p className="mb-3 text-sm leading-relaxed text-[var(--text-secondary)] text-justify">{item.body}</p>
+                  <p className="mb-3 text-sm leading-relaxed text-[var(--text-secondary)] text-justify">
+                    {item.body}
+                  </p>
                   <ul className="ml-3 list-disc space-y-1.5 text-sm text-[var(--text-secondary)]">
                     {item.bullets.map((b) => (
                       <li key={b}>{b}</li>
