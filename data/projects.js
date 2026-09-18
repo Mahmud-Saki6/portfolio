@@ -3,6 +3,17 @@
 // ========== WEB DEVELOPMENT PROJECTS ==========
 export const webProjects = [
   {
+    id: "learned-books",
+    title: "Learned Books",
+    description:
+      "An e-commerce bookstore platform featuring curated academic and niche book collections, with a seamless shopping experience and customer review system.",
+    image:
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Learned Books bookstore homepage and catalog",
+    liveUrl: "https://www.learnedbooks.com/",
+    tech: ["Next.js 14", "TypeScript", "MUI", "Redux Toolkit"],
+  },
+  {
     id: "masoutfits",
     title: "Masoutfits",
     description:
@@ -41,17 +52,6 @@ export const webProjects = [
     imageAlt: "Bakkah Holdings",
     liveUrl: "https://bakkahholdings.com/",
     tech: ["React", "Tailwind CSS", "Corporate"],
-  },
-  {
-    id: "learned-books",
-    title: "Learned Books",
-    description:
-      "An e-commerce bookstore platform featuring curated academic and niche book collections, with a seamless shopping experience and customer review system.",
-    image:
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Learned Books bookstore homepage and catalog",
-    liveUrl: "https://learned-books.vercel.app/",
-    tech: ["Next.js 14", "TypeScript", "MUI", "Redux Toolkit"],
   },
 ];
 
